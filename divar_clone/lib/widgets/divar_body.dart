@@ -10,13 +10,15 @@ class DivarPostLists extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
+        shape: RoundedRectangleBorder(
+            side: const BorderSide(color: Color(0xFFCCC7C7)),
+            borderRadius: BorderRadius.circular(8.0)),
         elevation: 0,
-        color: const Color(0xFFF1ECEC),
+        color: const Color(0xFFFFFFFF),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,15 +65,17 @@ class DivarPostLists extends StatelessWidget {
               ),
               const SizedBox(width: 10.0),
               Container(
-                width: 150,
-                height: 150,
+                width: 140,
+                height: 140,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                        image: NetworkImage(
-                      item.image,
-                    ))),
-              ),
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(
+                        item.image,
+                      )),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              )
             ],
           ),
         ),
@@ -79,34 +83,3 @@ class DivarPostLists extends StatelessWidget {
     );
   }
 }
-
-
-// ListTile(
-//             leading: Image.network(
-//               item.image,
-//               height: 90,
-//               width: 90,
-//             ),
-//             title: Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Center(
-//                   child: Text(item.name,
-//                       style: const TextStyle(
-//                           color: Colors.black,
-//                           fontWeight: FontWeight.bold,
-//                           fontSize: 18))),
-//             ),
-//             subtitle: Center(
-//                 child: Text(item.desc,
-//                     style: TextStyle(
-//                         color: Colors.indigo.shade500,
-//                         fontWeight: FontWeight.bold,
-//                         fontSize: 15))),
-//             trailing: Text(
-//               "\$${item.price}",
-//               style: const TextStyle(
-//                   color: Colors.purple,
-//                   fontWeight: FontWeight.bold,
-//                   fontSize: 20),
-//             ),
-//           ),
