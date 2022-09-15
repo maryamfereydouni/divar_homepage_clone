@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:divar_clone/models/divar_posts_model.dart';
 
-class DivarPostLists extends StatelessWidget {
+class DivarAdsPage extends StatelessWidget {
   final Item item;
-  const DivarPostLists({Key? key, required this.item}) : super(key: key);
+
+  const DivarAdsPage({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
